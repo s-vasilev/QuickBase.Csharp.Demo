@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuickBase.API</name>
+    </assembly>
+    <members>
+        <member name="T:QuickBase.API.ApiModels.ErrorModel">
+            <summary>Error model.</summary>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.ErrorModel.Message">
+            <summary>Gets or sets the error message.</summary>
+            <value>The error message.</value>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.ErrorModel.StatusCode">
+            <summary>Gets or sets the status code.</summary>
+            <value>The status code.</value>
+        </member>
+        <member name="T:QuickBase.API.ApiModels.Request.CountryRequest">
+            <summary>Country request model.</summary>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.Request.CountryRequest.Id">
+            <summary>Gets or sets the country identifier.</summary>
+            <value>The country identifier.</value>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.Request.CountryRequest.Name">
+            <summary>Gets or sets the country name.</summary>
+            <value>The county name.</value>
+        </member>
+        <member name="T:QuickBase.API.ApiModels.Response.CityResponse">
+            <summary>City Response Model.</summary>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.Response.CityResponse.Name">
+            <summary>Gets or sets the city name.</summary>
+            <value>The city name.</value>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.Response.CityResponse.Population">
+            <summary>Gets or sets the city population.</summary>
+            <value>The city population.</value>
+        </member>
+        <member name="T:QuickBase.API.ApiModels.Response.CountryPopulationResponse">
+            <summary>Country Population Model.</summary>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.Response.CountryPopulationResponse.Id">
+            <summary>Gets or sets the county identifier.</summary>
+            <value>The country identifier.</value>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.Response.CountryPopulationResponse.Name">
+            <summary>Gets or sets the country name.</summary>
+            <value>The country name.</value>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.Response.CountryPopulationResponse.Population">
+            <summary>Gets or sets the country population.</summary>
+            <value>The country population.</value>
+        </member>
+        <member name="T:QuickBase.API.ApiModels.Response.CountryResponse">
+            <summary>Country Response Model</summary>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.Response.CountryResponse.Id">
+            <summary>Gets or sets the country identifier.</summary>
+            <value>The country identifier.</value>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.Response.CountryResponse.Name">
+            <summary>Gets or sets the country name.</summary>
+            <value>The country name.</value>
+        </member>
+        <member name="T:QuickBase.API.ApiModels.Response.StateResponse">
+            <summary>State Response Model.</summary>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.Response.StateResponse.Id">
+            <summary>Gets or sets the state identifier.</summary>
+            <value>The state identifier.</value>
+        </member>
+        <member name="P:QuickBase.API.ApiModels.Response.StateResponse.Name">
+            <summary>Gets or sets the state name.</summary>
+            <value>The state name.</value>
+        </member>
+        <member name="T:QuickBase.API.Automapper.ApiModelsToDtos">
+            <summary>Automapper profile for Api models to Dtos mappings.</summary>
+        </member>
+        <member name="M:QuickBase.API.Automapper.ApiModelsToDtos.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:QuickBase.API.Automapper.ApiModelsToDtos" /> class.</summary>
+        </member>
+        <member name="T:QuickBase.API.Automapper.DtosToApiModels">
+            <summary>Automapper profile for Dtos to Api models mappings.</summary>
+        </member>
+        <member name="M:QuickBase.API.Automapper.DtosToApiModels.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:QuickBase.API.Automapper.DtosToApiModels" /> class.</summary>
+        </member>
+        <member name="T:QuickBase.API.Controllers.CityController">
+            <summary>City Controller</summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:QuickBase.API.Controllers.CityController.#ctor(QuickBase.Business.Interfaces.Services.ICityService,AutoMapper.IMapper)">
+            <summary>Initializes a new instance of the <see cref="T:QuickBase.API.Controllers.CityController" /> class.</summary>
+            <param name="cityService">The city service.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:QuickBase.API.Controllers.CityController.Get">
+            <summary>Gets all cities.</summary>
+            <returns>A collection of city objects.</returns>
+        </member>
+        <member name="T:QuickBase.API.Controllers.CountryController">
+            <summary>Country Controller</summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:QuickBase.API.Controllers.CountryController.#ctor(QuickBase.Business.Interfaces.Services.ICountryService,AutoMapper.IMapper)">
+            <summary>Initializes a new instance of the <see cref="T:QuickBase.API.Controllers.CountryController" /> class.</summary>
+            <param name="countryService">The country service.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:QuickBase.API.Controllers.CountryController.Get">
+            <summary>Gets all countries.</summary>
+            <returns>A collection of country objects.</returns>
+        </member>
+        <member name="M:QuickBase.API.Controllers.CountryController.GetAllPopulations">
+            <summary>Gets all country populations.</summary>
+            <returns>A collection of country population objects.</returns>
+        </member>
+        <member name="M:QuickBase.API.Controllers.CountryController.Post(QuickBase.API.ApiModels.Request.CountryRequest)">
+            <summary>Creates a new country.</summary>
+            <param name="request">The country object.</param>
+            <returns>OK response.</returns>
+        </member>
+        <member name="M:QuickBase.API.Controllers.CountryController.UpdateCountry(QuickBase.API.ApiModels.Request.CountryRequest)">
+            <summary>Updates the country.</summary>
+            <param name="request">The country object.</param>
+            <returns>OK response.</returns>
+        </member>
+        <member name="T:QuickBase.API.Controllers.StateController">
+            <summary>State Controller.</summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:QuickBase.API.Controllers.StateController.#ctor(QuickBase.Business.Interfaces.Services.IStateService,AutoMapper.IMapper)">
+            <summary>Initializes a new instance of the <see cref="T:QuickBase.API.Controllers.StateController" /> class.</summary>
+            <param name="stateService">The state service.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:QuickBase.API.Controllers.StateController.Get">
+            <summary>Gets all states.</summary>
+            <returns>A collection of states.</returns>
+        </member>
+        <member name="T:QuickBase.API.Middlewares.ExceptionMiddleware">
+            <summary>Global exception middleware.</summary>
+        </member>
+        <member name="M:QuickBase.API.Middlewares.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Serilog.ILogger)">
+            <summary>Initializes a new instance of the <see cref="T:QuickBase.API.Middlewares.ExceptionMiddleware" /> class.</summary>
+            <param name="next">The next.</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:QuickBase.API.Startup.GetConnectionString">
+            <summary>Gets the connection string.</summary>
+            <returns>The connection string.</returns>
+            <exception cref="T:QuickBase.Business.Exceptions.DbConfigurationException"></exception>
+        </member>
+        <member name="T:QuickBase.API.Validators.Request.CountryRequestValidator">
+            <summary>Country Request Validator.</summary>
+        </member>
+        <member name="M:QuickBase.API.Validators.Request.CountryRequestValidator.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:QuickBase.API.Validators.Request.CountryRequestValidator" /> class.</summary>
+        </member>
+    </members>
+</doc>
